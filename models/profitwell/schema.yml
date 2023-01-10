@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  
+  - name: profitwell__daily_metrics
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+
+  - name: profitwell__monthly_metrics
+    columns: 
+      - name: date
+        tests:
+          - unique
+          - not_null

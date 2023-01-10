@@ -1,0 +1,32 @@
+name: 'profitwell_metrics'
+version: '1.0.0'
+
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'profitwell_metrics'
+
+
+vars:
+  
+  profitwell_schema: profitwell
+
+  active_customers_tbl: active_customers
+  average_revenue_per_user_tbl: average_revenue_per_user
+  churned_customers_tbl: churned_customers
+  churned_recurring_revenue_tbl: churned_recurring_revenue
+  downgraded_customers_tbl: downgraded_customers
+  downgraded_recurring_revenue_tbl: downgraded_recurring_revenue
+  new_customers_tbl: new_customers
+  new_recurring_revenue_tbl: new_recurring_revenue
+  recurring_revenue_tbl: recurring_revenue
+  
+
+models:
+  profitwell_metrics:
+    profitwell:
+      +materialized: table
+      +schema: profitwell
+      tmp:
+        +materialized: view
+        +schema: profitwell
