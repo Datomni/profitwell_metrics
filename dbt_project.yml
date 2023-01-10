@@ -3,9 +3,6 @@ version: '1.0.0'
 
 config-version: 2
 
-# This setting configures which "profile" dbt uses for this project.
-profile: 'profitwell_metrics'
-
 
 vars:
   active_customers_src: "{{ source('profitwell', 'active_customers') }}" 
