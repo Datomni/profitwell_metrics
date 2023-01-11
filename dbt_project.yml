@@ -20,6 +20,5 @@ models:
   profitwell_metrics:
     profitwell:
       +materialized: table
-      +schema: profitwell
       tmp:
         +materialized: view

@@ -18,8 +18,8 @@ Include this package in your packages.yml and run `dbt deps`
 
 ```
 packages:
-  - package: datomni/profitwell_metrics
-    version: ">=1.0.0"
+  - git: "https://github.com/Datomni/profitwell_metrics.git"
+    
 ```
 
 ### (Optional) Step 2: Configure Database and Schema Variables
@@ -65,7 +65,7 @@ This package assumes that your data granularity is as follows:
 * profitwell.recurring_revenue: daily
 
 ### (Optional) Step 4: Change the Build Schema
-By default, this package will build all models in your <target_schema> with the _profitwell suffix. 
+By default, this package will build all models in your <target_schema> . 
   
 This behavior can be tailored to your preference by making use of custom schemas. 
 If you would like to override the current naming conventions, please add the following configuration to 
@@ -73,7 +73,7 @@ your dbt_project.yml file and rename +schema configs:
 
 ```
 models:  
-  profitwell:
+  profitwell_metrics:
     +schema: profitwell
 ```
 
