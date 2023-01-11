@@ -1,0 +1,24 @@
+name: 'profitwell_metrics'
+version: '1.0.0'
+
+config-version: 2
+
+
+vars:
+  active_customers_src: "{{ source('profitwell', 'active_customers') }}" 
+  average_revenue_per_user_src: "{{ source('profitwell', 'average_revenue_per_user') }}" 
+  churned_customers_src: "{{ source('profitwell', 'churned_customers') }}" 
+  churned_recurring_revenue_src: "{{ source('profitwell', 'churned_recurring_revenue') }}" 
+  downgraded_customers_src: "{{ source('profitwell', 'downgraded_customers') }}" 
+  downgraded_recurring_revenue_src: "{{ source('profitwell', 'downgraded_recurring_revenue') }}" 
+  new_customers_src: "{{ source('profitwell', 'new_customers') }}" 
+  new_recurring_revenue_src: "{{ source('profitwell', 'new_recurring_revenue') }}" 
+  recurring_revenue_src: "{{ source('profitwell', 'recurring_revenue') }}" 
+
+
+models:
+  profitwell_metrics:
+    profitwell:
+      +materialized: table
+      tmp:
+        +materialized: view
