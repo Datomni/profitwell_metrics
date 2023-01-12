@@ -18,7 +18,8 @@ Include this package in your packages.yml and run `dbt deps`
 
 ```
 packages:
-  - git: "https://github.com/Datomni/profitwell_metrics.git"
+  - package: Datomni/profitwell_metrics
+    version: ">=0.1.1"
     
 ```
 
